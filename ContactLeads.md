@@ -1,4 +1,4 @@
-## ContactLeads [/contactLeads]
+## contactLeads [/contactLeads]
 ContactLeads takes the query from customer and generates a lead id to proceed furthur on the query to resolve it.
 
 ### contactLeads
@@ -7,23 +7,23 @@ contactLeads resource information
 | Property | Type | As request | As response | Description |
 | :-------------------- | :---------- | :-------------------- | :-------------------- | :------------------------------------------------------------ |
 | id |	String | Not required | Returned always | It helps to identify customer resource. Value is combination of lead id and account number. |
-| title | String | Optional | Returned always | It helps to identify customer title value. |
-| firstName |String  | Optional | Returned always | It helps to identify customer first name value. |
-| surname | String  | Optional | Returned always | It helps to identify customer sur name value. |
-| businessName | String | Optional | Returned always | It helps to identify customer business name value. |
-| accountNumber | String | Optional | Returned always | It helps to identify customer accountNumber value. |
-| emailAddress | String | Optional | Returned always | It helps to identify customer email value. |
-| telephoneNumber | String | Optional | Returned always | It helps to identify customer phone number value. |
-| postcode | String | Optional | Returned always | It helps to identify customer postcode value. |
-| address | String | Optional | Returned always | It helps to identify customer address value. |
-| query | String | Optional | Returned always | It helps to identify customer query value. |
-| queryCategory | String | Optional | Returned always | It helps to identify customer queryCategory value. |
-| queryOptionSelect | String | Optional | Returned always | It helps to identify queryOptionSelect value. |
+| title | String | Mandatory | Returned always | It helps to identify customer title value. |
+| firstName |String  | Mandatory | Returned always | It helps to identify customer first name value. |
+| surname | String  | Mandatory | Returned always | It helps to identify customer sur name value. |
+| businessName | String | Mandatory | Returned always | It helps to identify customer business name value. |
+| accountNumber | String | Mandatory | Returned always | It helps to identify customer accountNumber value. |
+| emailAddress | String | Mandatory | Returned always | It helps to identify customer email value. |
+| telephoneNumber | String | Mandatory | Returned always | It helps to identify customer phone number value. |
+| postcode | String | Mandatory | Returned always | It helps to identify customer postcode value. |
+| address | String | Mandatory | Returned always | It helps to identify customer address value. |
+| query | String | Mandatory | Returned always | It helps to identify customer query value. |
+| queryCategory | String | Mandatory | Returned always | It helps to identify customer queryCategory value. |
+| queryOptionSelect | String | Mandatory | Returned always | It helps to identify queryOptionSelect value. |
 
 
 ### Use cases
 
-## Create an contactLeads
+## Create a contactLeads
 
 ## Headers
 	POST /contactLeads
