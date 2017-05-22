@@ -23,14 +23,14 @@ contactLeads resource information
 
 ### Use cases
 
-### Create an contactLeads [POST /contactLeads]
+## Create an contactLeads
 
 ## Headers
-
-            Authorization: Bearer {accesstoken}
-            cid: 05e230bf-a9cf-4b31-bc54-d3a995f62526
+	POST /contactLeads
+        cid: 05e230bf-a9cf-4b31-bc54-d3a995f62526
 			
 ## Request
+
 ```json
             {
               "contactLeads": {
@@ -50,7 +50,9 @@ contactLeads resource information
               "meta": {}
             }
 ```
+
 ## Response 200 (contactLeads/json)
+
 ```json
             {
               "status": "SUCCESS",
@@ -74,8 +76,9 @@ contactLeads resource information
               "errors": [],
               "meta": {}
             }
-```			
-## Request 'Customer not authenticated'
+```
+
+## Request - Customer not authenticated
 
  ### Headers
 
@@ -83,6 +86,7 @@ contactLeads resource information
             cid: 05e230bf-a9cf-4b31-bc54-d3a995f62526
 
 ### Response 401 (contactLeads/json)
+
 ```json
             {
                 "status": "FAIL",
@@ -96,14 +100,14 @@ contactLeads resource information
                 "meta": {}
             }
 ```
-## Request 'Input Validations'
+
+## Request - Input Validations
 
 ### Headers
-
-            Authorization: Bearer {accesstoken}
             cid: 05e230bf-a9cf-4b31-bc54-d3a995f62526
 
 ## Response 400 (contactLeads/json)
+
 ```json
             {
                 "status": "FAIL",
@@ -118,7 +122,7 @@ contactLeads resource information
             }
 ```		
 
-## Request 'Error from DB'
+## Request - Error from DB
 
 ## Headers
 
@@ -126,16 +130,17 @@ contactLeads resource information
             cid: 05e230bf-a9cf-4b31-bc54-d3a995f62526
 	    
 ## Response 500 (application/json)
+
 ```json
-        {
-            "status": "ERROR",
-            "data": {},
-            "errors": [
-                {
-                    "code": "system",
-                    "message": "error.system.unexpected.error"
-                }
-            ],
-            "meta": {}
-        }
+
+  {
+	"status": "ERROR",
+	"data": {},
+	"errors": [{
+		"code": "system",
+		"message": "error.system.unexpected.error"
+	}],
+	"meta": {}
+}
+
 ```
