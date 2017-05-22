@@ -5,35 +5,33 @@ ContactLeads takes the query from customer and generates a lead id to proceed fu
 contactLeads resource information
 
 | Property | Type | As request | As response | Description |
-
-| :-------------------- | :---------- | :-------------------- | :-------------------- | ------------------------------------------------------------ |
-|id|	String | Not required | Returned always | Its helps to identify customer resource. Value is combination of lead id and acc.number.|
-|title|String | Optional | Returned always | Its helps to identify customer title value.|
-|firstName|String  | Optional | Returned always| Its helps to identify customer first name value.|
-|surname|String  | Optional | Returned always| Its helps to identify customer sur name value.|
-|businessName|String| Optional | Returned always| Its helps to identify customer business name value.|
-|accountNumber|String| Optional | Returned always| Its helps to identify customer accountNumber value.|
-|emailAddress|String| Optional | Returned always| Its helps to identify customer email value.|
-|telephoneNumber|String| Optional | Returned always| Its helps to identify customer phone number value.|
-|postcode|String| Optional | Returned always| Its helps to identify customer postcode value.|
-|address|String| Optional | Returned always| Its helps to identify customer address value.|
-|query|String| Optional | Returned always| Its helps to identify customer query value.|
-|queryCategory|String| Optional | Returned always| Its helps to identify customer queryCategory value.|
-|queryOptionSelect|String| Optional | Returned always| Its helps to identify queryOptionSelect value.|
+| :-------------------- | :---------- | :-------------------- | :-------------------- | :------------------------------------------------------------ |
+| id |	String | Not required | Returned always | It helps to identify customer resource. Value is combination of lead id and account number. |
+| title | String | Optional | Returned always | It helps to identify customer title value. |
+| firstName |String  | Optional | Returned always | It helps to identify customer first name value. |
+| surname | String  | Optional | Returned always | It helps to identify customer sur name value. |
+| businessName | String | Optional | Returned always | It helps to identify customer business name value. |
+| accountNumber | String | Optional | Returned always | It helps to identify customer accountNumber value. |
+| emailAddress | String | Optional | Returned always | It helps to identify customer email value. |
+| telephoneNumber | String | Optional | Returned always | It helps to identify customer phone number value. |
+| postcode | String | Optional | Returned always | It helps to identify customer postcode value. |
+| address | String | Optional | Returned always | It helps to identify customer address value. |
+| query | String | Optional | Returned always | It helps to identify customer query value. |
+| queryCategory | String | Optional | Returned always | It helps to identify customer queryCategory value. |
+| queryOptionSelect | String | Optional | Returned always | It helps to identify queryOptionSelect value. |
 
 
 ### Use cases
 
 ### Create an contactLeads [POST /contactLeads]
-+ Request
 
-		+ Headers
+## Headers
 
             Authorization: Bearer {accesstoken}
             cid: 05e230bf-a9cf-4b31-bc54-d3a995f62526
 			
-	    + Body
-
+## Request
+```json
             {
               "contactLeads": {
                 "title": "Mr",
@@ -51,8 +49,9 @@ contactLeads resource information
               },
               "meta": {}
             }
-+ Response 200 (contactLeads/json)
-
+```
+## Response 200 (contactLeads/json)
+```json
             {
               "status": "SUCCESS",
               "data": {
@@ -75,16 +74,16 @@ contactLeads resource information
               "errors": [],
               "meta": {}
             }
-			
-+ Request 'Customer not authenticated'
+```			
+## Request 'Customer not authenticated'
 
-    + Headers
+ ### Headers
 
             Authorization: Bearer {accesstoken}
             cid: 05e230bf-a9cf-4b31-bc54-d3a995f62526
 
-     + Response 401 (contactLeads/json)
-
+### Response 401 (contactLeads/json)
+```json
             {
                 "status": "FAIL",
                 "data": {},
@@ -96,16 +95,16 @@ contactLeads resource information
                 ],
                 "meta": {}
             }
+```
+## Request 'Input Validations'
 
-+ Request 'Input Validations'
-
-    + Headers
+### Headers
 
             Authorization: Bearer {accesstoken}
             cid: 05e230bf-a9cf-4b31-bc54-d3a995f62526
 
-+ Response 400 (contactLeads/json)
-
+## Response 400 (contactLeads/json)
+```json
             {
                 "status": "FAIL",
                 "data": {},
@@ -117,16 +116,17 @@ contactLeads resource information
                 ],
                 "meta": {}
             }
-			
-+ Request 'Error from DB'
+```		
 
-    + Headers
+## Request 'Error from DB'
+
+## Headers
 
             Authorization: Bearer {accesstoken}
             cid: 05e230bf-a9cf-4b31-bc54-d3a995f62526
-
-+ Response 500 (application/json)
-
+	    
+## Response 500 (application/json)
+```json
         {
             "status": "ERROR",
             "data": {},
@@ -138,3 +138,4 @@ contactLeads resource information
             ],
             "meta": {}
         }
+```
