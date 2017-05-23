@@ -13,12 +13,17 @@ Contact Leads as a resource represents following information
 | businessName | String | Mandatory | Returned always | It helps to identify customer business name value. |
 | contractAccount | String | Optional | Returned always | It helps to identify customer Contract account number value. |
 | emailAddress | String | Mandatory | Returned always | It helps to identify customer email value. |
-| phoneNumber | String | Mandatory | Returned always | It helps to identify customer phone number value. |
+| telephoneNumber | TelephoneNumber | Mandatory | Returned always | It helps to identify customer phone number value. |
 | address | Object | Mandatory | Returned always | It helps to identify customer address value. |
 | query | String | Mandatory | Returned always | It helps to identify customer query value. |
 | queryCategory | String | Mandatory | Returned always | It helps to identify customer queryCategory value. |
 | queryOption | String | Mandatory | Returned always | It helps to identify queryOptionSelect value. |
 
+### TelephoneNumber
+| Name | Type | As request | As response | Description |
+| :---------- | :------ | -------- |---------|------------------------------------ |
+| number | string | `Mandatory`| `Returned always` | Valid Telephone number applicable. |
+| type | string | `Optional` | `Returned always` |Telephone number type, it can be `home`, `work`, `mobile`|
 
 ### Use cases
 
@@ -39,7 +44,7 @@ Contact Leads as a resource represents following information
                 "businessName": "Centrica",
 		"contractAccount": "600000329",
                 "emailAddress": "britishgas@bggas.co.uk",
-                "phoneNumber": {
+                "telephoneNumber": {
                       "number": "07404669698",
                       "type": null
                     },
@@ -79,7 +84,7 @@ Contact Leads as a resource represents following information
                 "businessName": "Centrica",
 		"contractAccount": "600000329",
                 "emailAddress": "britishgas@bggas.co.uk",
-                "phoneNumber": {
+                "telephoneNumber": {
                       "number": "07404669698",
                       "type": null
                     },
