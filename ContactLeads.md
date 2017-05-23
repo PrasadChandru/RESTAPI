@@ -1,29 +1,28 @@
-## contactLeads [/contactLeads]
-ContactLeads takes the query from customer and generates a lead id to proceed furthur on the query to resolve it.
+## Contact Leads [/contact-Leads]
+Contact Leads endpoint allows to generates a lead id after saving the details in DB by getting the customer query and process furthur on the query to resolve it.
 
-### contactLeads
-contactLeads resource information
+### contact-Leads
+Contact Leads as a resource represents following information
 
 | Property | Type | As request | As response | Description |
 | :-------------------- | :---------- | :-------------------- | :-------------------- | :------------------------------------------------------------ |
-| id |	String | Not required | Returned always | It helps to identify customer resource. Value is combination of lead id and account number. |
+| id |	String | Not required | Returned always | It helps to identify customer resource. Value is lead id number. |
 | title | String | Mandatory | Returned always | It helps to identify customer title value. |
 | firstName |String  | Mandatory | Returned always | It helps to identify customer first name value. |
-| surname | String  | Mandatory | Returned always | It helps to identify customer sur name value. |
+| lastName | String  | Mandatory | Returned always | It helps to identify customer last name value. |
 | businessName | String | Mandatory | Returned always | It helps to identify customer business name value. |
-| accountNumber | String | Mandatory | Returned always | It helps to identify customer accountNumber value. |
+| contractAccount | String | Optional | Returned always | It helps to identify customer Contract account number value. |
 | emailAddress | String | Mandatory | Returned always | It helps to identify customer email value. |
-| telephoneNumber | String | Mandatory | Returned always | It helps to identify customer phone number value. |
-| postcode | String | Mandatory | Returned always | It helps to identify customer postcode value. |
-| address | String | Mandatory | Returned always | It helps to identify customer address value. |
+| phoneNumber | String | Mandatory | Returned always | It helps to identify customer phone number value. |
+| address | Object | Mandatory | Returned always | It helps to identify customer address value. |
 | query | String | Mandatory | Returned always | It helps to identify customer query value. |
 | queryCategory | String | Mandatory | Returned always | It helps to identify customer queryCategory value. |
-| queryOptionSelect | String | Mandatory | Returned always | It helps to identify queryOptionSelect value. |
+| queryOption | String | Mandatory | Returned always | It helps to identify queryOptionSelect value. |
 
 
 ### Use cases
 
-## Create a contactLeads
+## Create a Contact Leads
 
 ## Headers
 	POST /contactLeads
@@ -36,22 +35,37 @@ contactLeads resource information
               "contactLeads": {
                 "title": "Mr",
                 "firstName": "Edwards",
-                "surname": "Church",
+                "lastName": "Church",
                 "businessName": "Centrica",
-				 "accountNumber": "600000329",
+		"contractAccount": "600000329",
                 "emailAddress": "britishgas@bggas.co.uk",
-                "telephoneNumber": "02071234567",
-                "postcode": "le4 5ex",
-				 "address": "21 VICTORIA ROAD NORTH LEICESTER LE4 5EX",
+                "phoneNumber": {
+                      "number": "07404669698",
+                      "type": null
+                    },
+		"address":{ 
+			"countryCode": "GB",
+ +			"regionCode": "DBY",
+ +			"streetPostalCode": "DE21 2DF",
+ +			"cityName": "DERBY",
+ +			"streetName": "Bishops Drive",
+ +			"street2": "",
+ +			"street3": "",
+ +			"street4": "",
+ +			"houseID": "378",
+ +			"buildingID": "",
+ +			"pOBoxNumber": "",
+ +			"pOBoxPostCode": ""
+		   },
                 "query": "regarding meter select",
                 "queryCategory": "My meter reading",
-                "queryOptionSelect": "Meter reading enquiry"
+                "queryOption": "Meter reading enquiry"
               },
               "meta": {}
             }
 ```
 
-## Response 200 (contactLeads/json)
+## Response 200 (contact-Leads/json)
 
 ```json
             {
@@ -61,16 +75,31 @@ contactLeads resource information
                   "id": "567890329",
                   "title": "Mr",
                 "firstName": "Edwards",
-                "surname": "Church",
+                "lastName": "Church",
                 "businessName": "Centrica",
-				 "accountNumber": "600000329",
+		"contractAccount": "600000329",
                 "emailAddress": "britishgas@bggas.co.uk",
-                "telephoneNumber": "02071234567",
-                "postcode": "le4 5ex",
-				 "address": "21 VICTORIA ROAD NORTH LEICESTER LE4 5EX",
+                "phoneNumber": {
+                      "number": "07404669698",
+                      "type": null
+                    },
+		"address":{ 
+			"countryCode": "GB",
+ +			"regionCode": "DBY",
+ +			"streetPostalCode": "DE21 2DF",
+ +			"cityName": "DERBY",
+ +			"streetName": "Bishops Drive",
+ +			"street2": "",
+ +			"street3": "",
+ +			"street4": "",
+ +			"houseID": "378",
+ +			"buildingID": "",
+ +			"pOBoxNumber": "",
+ +			"pOBoxPostCode": ""
+		   },
                 "query": "regarding meter select",
                 "queryCategory": "My meter reading",
-                "queryOptionSelect": "Meter reading enquiry"
+                "queryOption": "Meter reading enquiry"
                 }
               },
               "errors": [],
@@ -85,7 +114,7 @@ contactLeads resource information
             Authorization: Bearer {accesstoken}
             cid: 05e230bf-a9cf-4b31-bc54-d3a995f62526
 
-### Response 401 (contactLeads/json)
+### Response 401 (contact-Leads/json)
 
 ```json
             {
@@ -106,7 +135,7 @@ contactLeads resource information
 ### Headers
             cid: 05e230bf-a9cf-4b31-bc54-d3a995f62526
 
-## Response 400 (contactLeads/json)
+## Response 400 (contact-Leads/json)
 
 ```json
             {
@@ -129,7 +158,7 @@ contactLeads resource information
             Authorization: Bearer {accesstoken}
             cid: 05e230bf-a9cf-4b31-bc54-d3a995f62526
 	    
-## Response 500 (application/json)
+## Response 500 (contact-Leads/json)
 
 ```json
 
